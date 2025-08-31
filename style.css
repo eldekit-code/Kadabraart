@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #113;
+}
+* {
+    box-sizing: border-box;
+}
+.loader_bg{
+    position: fixed;
+    z-index: 99999999;
+    background-color: #113;
+    width: 100%;
+    height: 100%;
+}
+.loader{
+    border: 0 solid transparent;
+    border-bottom: 50%;
+    width: 50vh;
+    height: 50vh;
+    position: absolute;
+    top: calc(50% - 25vh);
+    left: calc(50% - 25vh);
+
+}
+.loader:before ,.loader:after{
+    content: '';
+    border: 1em solid #117;
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: 0.5s; 
+}
+@keyframes loader {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+.wrapper{
+    overflow: hidden;
+    background-color: transparent;
+}
+canvas{
+    display: block;
+}
+.Logo-contain {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border: 1px #114 solid;
+    border-radius: 20px;
+    background-color: #114;
+}
+.Logo-item {
+    max-width: 250px;
+    max-height: 250px;
+}
+.Logo-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.Drawing-container {
+    column-count: 3;
+    column-gap: 25px;
+    padding: 20px;
+}
+.Drawing-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    
+    border-radius: 10px;
+    
+}
+.Drawing-item img {
+    width: 95%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+    border: 1px #11a solid;
+    background-color: rgba(0, 0, 0, 0.527);
+}
+@media (max-width: 1200px) {
+    .Drawing-container { column-count: 3; }
+}
+@media (max-width: 800px) {
+    .Drawing-container { column-count: 2; }
+}
+@media (max-width: 500px) {
+    .Drawing-container { column-count: 1; }
+}
+.zoomable {
+    cursor: zoom-in;
+}
+.zoomed {
+    display: flex; /* tiene que estar visible para que funcione la transición */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+
+    opacity: 0;               /* empieza invisible */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* transición de opacidad y zoom */
+    transform: scale(0.8)   /* un ligero “zoom out” inicial */
+}
+.zoomed img {
+    max-width: 90vh;
+    max-height: 90vh;
+    border-radius: 20px;
+}
+.zoomed.active {
+    opacity: 1;               /* visible */
+    transform: scale(1);
+    cursor: zoom-out;       /* cursor de “zoom out” */
+    
+}
+.zoomed.active img {
+    max-width: max(90%, 90vh); /* tamaño máximo para que no se salga de la pantalla */
+    max-height: max(90%, 90vh); /* tamaño máximo para que no se salga de la pantalla */
+    
+}
+.zoomed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8); /* negro semitransparente */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 999; /* asegúrate de que esté debajo del zoom pero encima del contenido */
+}
+
+.zoomed-bg.active {
+  opacity: 1;
+}
+
+#effects {
+  position: fixed;      /* fijo en pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* deja pasar clicks al contenido */
+  z-index: -1;          /* negativo para que esté atrás de todo */
+}
