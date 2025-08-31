@@ -19,8 +19,9 @@ body {
     width: 50vh;
     height: 50vh;
     position: absolute;
-    top: calc(50% - 25vh);
-    left: calc(50% - 25vh);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
 }
 .loader:before ,.loader:after{
@@ -114,6 +115,7 @@ canvas{
     left: 0;
     width: 100%;
     height: 100%;
+    
 
     justify-content: center;
     align-items: center;
@@ -125,19 +127,14 @@ canvas{
     transform: scale(0.8)   /* un ligero “zoom out” inicial */
 }
 .zoomed img {
-    max-width: 90vh;
-    max-height: 90vh;
+    max-width: 70vw; /* tamaño máximo para que no se salga de la pantalla */
+    max-height: 70vh; /* tamaño máximo para que no se salga de la pantalla*/
     border-radius: 20px;
 }
 .zoomed.active {
     opacity: 1;               /* visible */
     transform: scale(1);
-    cursor: zoom-out;       /* cursor de “zoom out” */
-    
-}
-.zoomed.active img {
-    max-width: max(90%, 90vh); /* tamaño máximo para que no se salga de la pantalla */
-    max-height: max(90%, 90vh); /* tamaño máximo para que no se salga de la pantalla */
+    cursor: zoom-out;     /* cursor de “zoom out” */
     
 }
 .zoomed-bg {
