@@ -127,8 +127,8 @@ canvas{
     transform: scale(0.8)   /* un ligero “zoom out” inicial */
 }
 .zoomed img {
-    max-width: 70vw; /* tamaño máximo para que no se salga de la pantalla */
-    max-height: 70vh; /* tamaño máximo para que no se salga de la pantalla*/
+    max-width: 90vw; /* tamaño máximo para que no se salga de la pantalla */
+    max-height: 90vh; /* tamaño máximo para que no se salga de la pantalla*/
     border-radius: 20px;
 }
 .zoomed.active {
