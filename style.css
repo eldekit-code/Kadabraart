@@ -130,6 +130,8 @@ canvas{
     max-width: 90vw; /* tamaño máximo para que no se salga de la pantalla */
     max-height: 90vh; /* tamaño máximo para que no se salga de la pantalla*/
     border-radius: 20px;
+    min-width: 80vw;
+    min-height: 80vh;
 }
 .zoomed.active {
     opacity: 1;               /* visible */
