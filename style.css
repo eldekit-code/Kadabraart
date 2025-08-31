@@ -135,6 +135,8 @@ canvas{
     opacity: 1;               /* visible */
     transform: scale(1);
     cursor: zoom-out;     /* cursor de “zoom out” */
+    min-width: 80vw;
+    min-height: 80vh;
     
 }
 .zoomed-bg {
