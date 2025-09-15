@@ -2,6 +2,11 @@ body {
     margin: 0;
     box-sizing: border-box;
     background-color: #113;
+    cursor: url("cursor.png"), pointer;
+}
+img{
+    
+    
 }
 * {
     box-sizing: border-box;
@@ -107,6 +112,7 @@ canvas{
 }
 .zoomable {
     cursor: zoom-in;
+    cursor: url("cursor zoom in.png"), zoom-in;
 }
 .zoomed {
     display: flex; /* tiene que estar visible para que funcione la transición */
@@ -135,6 +141,7 @@ canvas{
     opacity: 1;               /* visible */
     transform: scale(1);
     cursor: zoom-out;     /* cursor de “zoom out” */
+    cursor: url("cursor zoom out.png"), zoom-out;
     min-width: 80vw;
     min-height: 80vh;
     
