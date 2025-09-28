@@ -1,7 +1,23 @@
 body{
     font-family: courier;
+    background-color: #fbcb64;
+    font-size: 30px;
+   
 }
-.logo_diario{
+.logo_diario_contain{
     display: flex;
-    
+    justify-content: center;
+    background-color: #ec9633;
+    border: 4px #ec9633 solid;
+    position: fixed;
+    flex-grow: 1;
+}
+.logo_diario_item {
+    max-width: 250px;
+    max-height: 250px;
+}
+.logo_diario_item img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
