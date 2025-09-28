@@ -1,8 +1,15 @@
 // ====== ZOOM DE IMÁGENES CON SCROLL AL CURSOR ======
 const imagenes = document.querySelectorAll('.zoomable');
+const sonido = document.getElementById('audio');
 
 imagenes.forEach(img => {
   img.addEventListener('click', () => {
+    try {
+      sonido.currentTime = 0;
+      sonido.play();
+    } catch (e) {
+      console.log("Error al reproducir el sonido:", e);
+    }
     // Crear overlay de fondo negro
     const fondo = document.createElement('div');
     fondo.classList.add('zoomed-bg');
